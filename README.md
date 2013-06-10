@@ -16,7 +16,7 @@ Getting Started
 ---------------
 Built upon the JotTouchSDK, the Jot Digital Ink framework is able to be added to any iOS 6 app. The framework provides a JotView class that extends the UIView class. JotView and it's delegate provide acess to the user's touch points and allows the developer the freedom to provide lines as needed.
 
-The Getting Started guide will walk you through the process of linking the framework to configuring the JotView methods and delegates.
+[The Getting Started Guide](https://github.com/Adonit/JotDigitalInk/wiki) will walk you through the process of linking the framework to configuring the JotView methods and delegates.
 
 Example Application
 -------------------
