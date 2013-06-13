@@ -29,3 +29,8 @@ Help us make this better
 ------------------------
 
 The Jot Digital Ink framework and it's supporting documentation are all a work in progress. Let us know your your thoughts by submitting issues and suggestions to our [GitHub issues list](https://github.com/adonit/JotDigitalInk/issues). Please feel free to [fork the wiki docs](https://github.com/Adonit/JotDigitalInk/wiki/_access) and send a pull request with your docs improvements.
+
+Enterprise Licenses
+-------------------
+
+The Jot Digital Ink framework is available for purchase in a full source code version for enterprise customers. If you are interested in more details, please contact us as developers@adonit.net.
