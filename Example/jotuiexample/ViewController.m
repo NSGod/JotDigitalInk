@@ -12,6 +12,7 @@
 
 @interface ViewController(){
     JotStylusManager* jotManager;
+    CGRect restoreOptionsFrame;
     
 }
 
@@ -87,9 +88,12 @@
     
     marker.color = [redButton backgroundColor];
     pen.color = [blackButton backgroundColor];
-    
+    restoreOptionsFrame = additionalOptionsView.frame;
 }
-
+- (void) viewDidAppear:(BOOL)animated
+{
+    [self hideAdditionalOptions];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -118,7 +122,49 @@
     maxWidth.text = [NSString stringWithFormat:@"%d", (int)[self activePen].maxSize];
 }
 
+- (void) showAdditionalOptions
+{
+    additionalOptionsView.hidden = NO;
+    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        headerImage.alpha = 0.25f;
+    } completion:^(BOOL finished) {
+    [UIView animateWithDuration:0.2f delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        additionalOptionsView.frame = restoreOptionsFrame;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
+            headerImage.alpha = 1.0f;
+        } completion:^(BOOL finished) {}];
+    }];
+    }];
+}
 
+- (void) hideAdditionalOptions
+{
+    restoreOptionsFrame = additionalOptionsView.frame;
+    CGRect newFrame = restoreOptionsFrame;
+    newFrame.size.height = 0;
+    newFrame.origin.x = optionsButton.frame.origin.x;
+    newFrame.size.width = 0;
+    
+    
+    //headerImage.frame = newHeaderImageFrame;
+    [UIView animateWithDuration:.2f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
+        headerImage.alpha = .25;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.2f delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            additionalOptionsView.frame = newFrame;
+        } completion:^(BOOL finished) {
+            //headerImage.frame = restoreHeaderImageFrame;
+            [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationOptionCurveEaseIn animations:^{
+                headerImage.alpha = 1.0;
+            } completion:nil];
+            additionalOptionsView.hidden = YES;
+        }];
+    }];
+    
+    
+    
+}
 
 #pragma mark - IBAction
 
@@ -140,7 +186,8 @@
 }
 
 -(IBAction) toggleOptionsPane:(id)sender{
-    additionalOptionsView.hidden = !additionalOptionsView.hidden;
+    
+    additionalOptionsView.hidden ? [self showAdditionalOptions] : [self hideAdditionalOptions];
 }
 
 -(IBAction) tappedColorButton:(UIButton*) sender{
@@ -365,4 +412,9 @@
     popoverController = nil;
 }
 
+- (void)viewDidUnload {
+    optionsButton = nil;
+    headerImage = nil;
+    [super viewDidUnload];
+}
 @end

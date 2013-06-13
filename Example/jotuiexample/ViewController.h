@@ -21,10 +21,12 @@
     
     UIPopoverController* popoverController;
     
+    IBOutlet UIButton *optionsButton;
     IBOutlet UISegmentedControl* pressureVsVelocityControl;
     IBOutlet UISegmentedControl* penVsMarkerControl;
     
     
+    IBOutlet UIImageView *headerImage;
     IBOutlet UILabel* minAlpha;
     IBOutlet UILabel* maxAlpha;
     IBOutlet UILabel* minWidth;
