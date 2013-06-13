@@ -47,7 +47,7 @@
 
 /* Begin PBXFileReference section */
 		0470307F17661861005090A6 /* JotUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JotUI.framework; path = ../JotUI.framework; sourceTree = "<group>"; };
-		0470308117661875005090A6 /* JotTouchSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JotTouchSDK.framework; path = ../../JotTouchSDK/JotTouchSDK.framework; sourceTree = "<group>"; };
+		0470308117661875005090A6 /* JotTouchSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JotTouchSDK.framework; path = ../JotTouchSDK.framework; sourceTree = "<group>"; };
 		6625FBB0174C219D009CC541 /* Filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Filled.png; sourceTree = "<group>"; };
 		6645055416EFCD7E00B90511 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		6645055516EFCD7E00B90511 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
